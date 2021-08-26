@@ -198,9 +198,10 @@ class Actor(object):
         """
         Create a new silhouette actor outlining this actor
         """
-        lw = self._silhouette_kwargs["lw"]
-        color = self._silhouette_kwargs["color"]
-        sil = self._mesh.silhouette().lw(lw).c(color)
+        kwargs = self._silhouette_kwargs.copy()
+        lw = kwargs.pop("lw")
+        color = kwargs.pop("color")
+        sil = self._mesh.silhouette(**kwargs).lw(lw).c(color)
 
         name = f"{self.name} silhouette"
         sil = Actor.make_actor(sil, name, "silhouette")
