@@ -101,6 +101,7 @@ class Actor(object):
         is_text=False,
         color=None,
         alpha=None,
+        shader_style=None,
     ):
         """
         Actor class representing anythng shown in a brainrender scene.
@@ -121,6 +122,7 @@ class Actor(object):
         self.name = name or "Actor"
         self.br_class = br_class or "None"
         self.is_text = is_text
+        self.shader_style = shader_style
 
         if color:
             self.mesh.c(color)

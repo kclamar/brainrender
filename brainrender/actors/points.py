@@ -76,7 +76,7 @@ class PointsBase:
 
 
 class Points(PointsBase, Actor):
-    def __init__(self, data, name=None, colors="salmon", alpha=1, radius=20, res=8):
+    def __init__(self, data, name=None, colors="salmon", alpha=1, radius=20, res=8, shader_style=None):
         """
         Creates an actor representing multiple points (more efficient than
         creating many Point instances).
@@ -106,7 +106,7 @@ class Points(PointsBase, Actor):
                 f"Input data should be either a numpy array or a file path, not: {_class_name(data)}"  # pragma: no cover
             )  # pragma: no cover
 
-        Actor.__init__(self, mesh, name=self.name, br_class="Points")
+        Actor.__init__(self, mesh, name=self.name, br_class="Points", shader_style=shader_style)
 
 
 class PointsDensity(Actor):

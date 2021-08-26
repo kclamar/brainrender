@@ -143,9 +143,9 @@ class Render:
         Sets the rendering style for each mesh
         """
         for actor in self.clean_actors:
-            if settings.SHADER_STYLE != "cartoon":
-                style = settings.SHADER_STYLE
-            else:
+            style = actor.shader_style if actor.shader_style is not None else settings.SHADER_STYLE
+
+            if style == "cartoon":
                 if self.backend:  # notebook backend
                     print(
                         'Shader style "cartoon" cannot be used in a notebook'
