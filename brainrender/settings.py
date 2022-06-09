@@ -9,7 +9,7 @@ vsettings.lineSmoothing = False
 vsettings.polygonSmoothing = False
 vsettings.immediateRendering = True
 
-vsettings.useDepthPeeling = False
+vsettings.useDepthPeeling = True
 # only relevant if depthpeeling is on
 # vsettings.alphaBitPlanes = 1
 # vsettings.maxNumberOfPeels = 12
